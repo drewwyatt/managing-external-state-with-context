@@ -1,0 +1,30 @@
+import { Head, Appear, Image, withDeck } from 'mdx-deck'  // https://github.com/jxnblk/mdx-deck
+export { dark as theme } from 'mdx-deck/themes'
+import { CodeSurfer } from 'mdx-deck-code-surfer' // https://elijahmanor.com/code-surfer/
+import Clock from './components/Clock'
+
+<Head>
+  <title>Context</title>
+</Head>
+
+# Hello!
+
+---
+
+<CodeSurfer
+  code={require("raw-loader!./snippets/clock.snippet")}
+  title="Clock Example"
+  showNumbers
+  steps={[
+    {},
+    { range: [8, 19], notes: 'Look at this part!' },
+  ]}
+/>
+
+---
+
+<Clock />
+
+---
+
+👋

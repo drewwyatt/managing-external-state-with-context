@@ -1,8 +1,13 @@
 {
+  "name": "managing-external-state-with-context",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:drewwyatt/managing-external-state-with-context.git"
+  },
   "scripts": {
-    "start": "mdx-deck demo-advanced.mdx",
+    "start": "mdx-deck presentation.mdx",
     "build": "npm run now-build",
-    "build:presentation": "mdx-deck build demo-advanced.mdx --no-html",
+    "build:presentation": "mdx-deck build presentation.mdx --no-html",
     "build:images": "cp -r images dist/",
     "build:assets": "cp -r snippets dist/",
     "now-build": "npm run build:presentation && npm run build:images && npm run build:assets",
@@ -10,7 +15,7 @@
   },
   "devDependencies": {
     "ajv": "6.8.1",
-    "mdx-deck": "1.8.2",
+    "mdx-deck": "^1.10.0",
     "mdx-deck-code-surfer": "0.5.5",
     "raw-loader": "1.0.0"
   }
