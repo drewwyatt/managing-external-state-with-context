@@ -7,23 +7,69 @@ import Clock from './components/Clock'
   <title>Context</title>
 </Head>
 
-# Hello!
+# Managing State with Hooks and Context
+
+<Appear>
+  or: how to not go crazy when working with non-react-like SDKs
+</Appear>
+
+---
+
+<h1>Drew Wyatt</h1>
+<p>Software Engineer at Peloton</p>
+<p>@drewwyatt | @djwyatt</p>
+
+---
+
+<Image
+  src="/images/peloton-player.png"
+  size="contain"
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+  }}
+>
+  <Appear>
+    <h1>This is a thing I work on</h1>
+  </Appear>
+</Image>
+
+---
+
+# It uses JWPlayer
 
 ---
 
 <CodeSurfer
-  code={require("raw-loader!./snippets/clock.snippet")}
-  title="Clock Example"
-  showNumbers
-  steps={[
-    {},
-    { range: [8, 19], notes: 'Look at this part!' },
-  ]}
+  title="JWPlayer's API looks like this"
+  code={require("raw-loader!./snippets/jwplayer/setup.snippet")}
 />
 
 ---
 
-<Clock />
+<CodeSurfer
+  title="You can attach listeners"
+  code={require("raw-loader!./snippets/jwplayer/listeners.snippet")}
+/>
+
+---
+
+<CodeSurfer
+  title="You can dispatch actions"
+  code={require("raw-loader!./snippets/jwplayer/actions.snippet")}
+/>
+
+---
+
+<div style={{ textAlign: 'left' }}>
+  <Appear>
+    <p>🤦‍&nbsp;this doesn't feel very react-like</p>
+    <p>👍&nbsp;it's okay though, we can write an adapter</p>
+    <p>😎&nbsp;this might even be fun!</p>
+    <p>💡&nbsp;let's use a component class</p>
+  </Appear>
+</div>
 
 ---
 

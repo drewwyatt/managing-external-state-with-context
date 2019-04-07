@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types'
 
 const Clock = () => {
   const [hours, setHours] = useState(0)
