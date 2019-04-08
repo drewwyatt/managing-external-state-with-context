@@ -1,5 +1,5 @@
 import React from 'react'
-import { Time, AmPm, HourType } from '../lib/time'
+import { Time, AmPm, HourType } from '../time'
 
 export class ClockClass extends React.Component {
   time = new Time()

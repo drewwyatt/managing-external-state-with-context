@@ -1,10 +1,13 @@
 import './script'
 import { Head, Appear, Image, withDeck } from 'mdx-deck'  // https://github.com/jxnblk/mdx-deck
-export { dark as theme } from 'mdx-deck/themes'
 import { CodeSurfer } from 'mdx-deck-code-surfer' // https://elijahmanor.com/code-surfer/
-import { CodeBlock } from './components/code-block'
-import { ClockClass, clockClassSnippets } from './components/component-class'
+import {
+  clockClassSnippets,
+  ClockClass,
+  CodeBlock
+} from './components'
 
+export { monokai as theme } from './components'
 
 <Head>
   <title>Context</title>
@@ -42,6 +45,10 @@ import { ClockClass, clockClassSnippets } from './components/component-class'
 
 # It uses JWPlayer
 
+<Appear>
+  (JWPlayer is pretty imperative)
+</Appear>
+
 ---
 
 <CodeSurfer
@@ -59,7 +66,7 @@ import { ClockClass, clockClassSnippets } from './components/component-class'
 ---
 
 <CodeSurfer
-  title="You can dispatch actions"
+  title="You can set things"
   code={require("raw-loader!./snippets/jwplayer/actions.snippet")}
 />
 
@@ -102,14 +109,14 @@ import { ClockClass, clockClassSnippets } from './components/component-class'
 ---
 
 <CodeSurfer
-  title="You can set something"
+  title="You can set things"
   code={require("raw-loader!./snippets/time/actions.snippet")}
 />
 
 ---
 
 <CodeSurfer
-  title="You can get data"
+  title="You can get things"
   code={require("raw-loader!./snippets/time/getters.snippet")}
 />
 
