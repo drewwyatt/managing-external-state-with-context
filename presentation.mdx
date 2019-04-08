@@ -4,7 +4,8 @@ import { CodeSurfer } from 'mdx-deck-code-surfer' // https://elijahmanor.com/cod
 import {
   clockClassSnippets,
   ClockClass,
-  CodeBlock
+  CodeBlock,
+  state,
 } from './components'
 
 export { monokai as theme } from './components'
@@ -167,6 +168,18 @@ export { monokai as theme } from './components'
 ---
 
 # Let's try to split this up
+
+---
+
+<CodeBlock>{state.snippets.one}</CodeBlock>
+
+---
+
+<CodeBlock>{state.snippets.two}</CodeBlock>
+
+---
+
+<CodeBlock>{state.snippets.three}</CodeBlock>
 
 ---
 

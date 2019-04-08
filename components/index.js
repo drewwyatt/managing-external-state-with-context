@@ -1,4 +1,5 @@
 export * from './code-block'
 export * from './component-class'
+export * from './hooks'
 export * from './theme'
 export * from './time'
