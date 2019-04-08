@@ -5,6 +5,7 @@ import {
   clockClassSnippets,
   ClockClass,
   CodeBlock,
+  context,
   state,
 } from './components'
 
@@ -193,6 +194,30 @@ export { monokai as theme } from './components'
 ---
 
 # ...isn't this talk supposed to be about hooks?
+
+---
+
+<CodeBlock>{context.snippets.one}</CodeBlock>
+
+---
+
+<CodeBlock>{context.snippets.two}</CodeBlock>
+
+---
+
+<CodeBlock>{context.snippets.three}</CodeBlock>
+
+---
+
+<CodeBlock>{context.snippets.four}</CodeBlock>
+
+---
+
+<CodeBlock>{context.snippets.five}</CodeBlock>
+
+---
+
+## tl;dr: useReducer == Redux-lite
 
 ---
 
