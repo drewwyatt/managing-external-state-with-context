@@ -62,6 +62,8 @@ import Clock from './components/Clock'
 
 ---
 
+### What (I assume) goes through most people's heads when this happens
+
 <div style={{ textAlign: 'left' }}>
   <Appear>
     <p>🤦‍&nbsp;this doesn't feel very react-like</p>
@@ -80,6 +82,31 @@ import Clock from './components/Clock'
   <li>There is a lot of boilerplate</li>
   <li>I did my best to replicate the problem with a clock</li>
 </ul>
+
+---
+
+<CodeSurfer
+  title="You can attach listeners"
+  code={require("raw-loader!./snippets/time/listeners.snippet")}
+/>
+
+---
+
+<CodeSurfer
+  title="You can set something"
+  code={require("raw-loader!./snippets/time/actions.snippet")}
+/>
+
+---
+
+<CodeSurfer
+  title="You can get data"
+  code={require("raw-loader!./snippets/time/getters.snippet")}
+/>
+
+---
+
+# Back to making a component class...
 
 ---
 
