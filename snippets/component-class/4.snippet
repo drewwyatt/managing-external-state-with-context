@@ -1,0 +1,31 @@
+export class Clock extends React.Component<{}, State> {
+
+  private hourTypeSelect = (): JSX.Element[] =>
+    [HourType.twelve, HourType.twentyFour].map(this.hourTypeToRadio.bind(this))
+
+  private hourTypeToRadio = (hourType: HourType): JSX.Element => (
+    <label>
+      <input
+        key={hourType}
+        type="radio"
+        name="hour-type"
+        value={hourType}
+        checked={this.isSelectedHourType(hourType)}
+        onChange={this.handleHourClick.bind(this)}
+      />
+      {hourType}
+    </label>
+  )
+
+  private getFormattedTime = () => {
+    const { hours, minutes, seconds, amPm } = this.state
+    const numbers = [hours, minutes, seconds].map(this.pad0).join(':')
+    return `${numbers} ${amPm}`
+  }
+
+  private pad0 = (n: number): string => {
+    const str = n.toString()
+    return str.length > 1 ? str : '0' + str
+  }
+
+}

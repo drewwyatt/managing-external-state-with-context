@@ -1,0 +1,15 @@
+export class Clock extends React.Component<{}, State> {
+  private time = new Time()
+  public state = {
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    amPm: AmPm.na,
+    hourType: HourType.twentyFour,
+  }
+
+  componentDidMount() {
+    this.time.on('seconds', this.update.bind(this))
+    this.time.on('hourType', this.update.bind(this))
+  }
+}

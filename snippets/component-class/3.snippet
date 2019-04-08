@@ -1,0 +1,12 @@
+export class Clock extends React.Component<{}, State> {
+
+  render() {
+    return (
+      <fieldset>
+        <legend>Clock</legend>
+        <h1>{this.getFormattedTime()}</h1>
+        {this.hourTypeSelect()}
+      </fieldset>
+    )
+  }
+}
