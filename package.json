@@ -6,11 +6,11 @@
   },
   "scripts": {
     "start": "mdx-deck presentation.mdx",
-    "build": "npm run now-build",
+    "build": "yarn now-build",
     "build:presentation": "mdx-deck build presentation.mdx --no-html",
     "build:images": "cp -r images dist/",
     "build:assets": "cp -r snippets dist/",
-    "now-build": "npm run build:presentation && npm run build:images && npm run build:assets",
+    "now-build": "yarn build:presentation && yarn build:images && yarn build:assets",
     "deploy": "now"
   },
   "devDependencies": {
