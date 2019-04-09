@@ -116,7 +116,4 @@ export const useTime = (): [State, (h: HourType) => void] => {
   )
   return [state, setHourTypeOnTime] // return a tuple
 }
-
-
-
 `

@@ -1,2 +1,5 @@
+export * from './reducer'
+
+import * as actions from './actions'
 import * as snippets from './snippets'
-export { snippets }
+export { actions, snippets }
