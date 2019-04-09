@@ -8,7 +8,7 @@ const pad0 = n => {
 
 const View = ({ hours, minutes, seconds, amPm }) => {
   const numbers = [hours, minutes, seconds].map(pad0).join(':')
-  return <h1>{`${numbers} ${amPm}`}</h1>
+  return <h1>{numbers} {amPm}</h1>
 }
 
 const Controls = ({ hourType, setter }) => (
@@ -37,7 +37,7 @@ export const Clock = () => {
   const [state, setHourType] = useTime()
   return (
     <fieldset>
-      <legend>Clock</legend>
+      <legend>Hooks Clock</legend>
       <View {...state} />
       <Controls hourType={state.hourType} setter={setHourType} />
     </fieldset>
