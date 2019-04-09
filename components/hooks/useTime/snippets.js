@@ -117,3 +117,73 @@ export const useTime = (): [State, (h: HourType) => void] => {
   return [state, setHourTypeOnTime] // return a tuple
 }
 `
+
+export const seven = `
+import { TimeContext } from './context'
+
+export const useTime = (): [State, (h: HourType) => void] => {
+  const { state, dispatch } = useContext(TimeContext) // instead of requiring this to be TimeContext
+  // ...
+}
+`
+
+export const eight = `
+import { TimeContext } from './context'
+
+export const useTime = (
+  contex: typeof TimeContext = TimeContext // Make it the default, but allow it to be overwritten
+): [State, (h: HourType) => void] => {
+  const { state, dispatch } = useContext(context)
+  // ...
+}
+`
+
+export const nine = `
+// now we can make our own context, and spy on dispatch
+const makeContext = (state: State, dispatch: () => any = jest.fn()) =>
+  createContext({ state, dispatch })
+`
+
+export const ten = `
+// I'm going to skip over most of the details here, but the following is brought to you by
+// react-hooks-testing-library, and timer mocking in jest
+
+let dispatch: jest.Mock<any>
+let result: ReturnType<typeof useTime>['result']
+
+beforeAll(() => {
+  dispatch = jest.fn()
+  const container = useTime(makeContext(DEFAULT_STATE, dispatch))
+  result = container.result
+})
+
+afterEach(() => {
+  dispatch.mockReset()
+})
+`
+
+export const eleven = `
+it('will initialize itself', () => {
+  expect(dispatch).toHaveBeenCalledTimes(1)
+})
+
+it('can return a state', () => {
+  const [state] = result.current
+  expect(state).toEqual(DEFAULT_STATE)
+})
+
+it('dispatches an action each second', () => {
+  advanceTimeBySeconds(5)
+  expect(dispatch).toHaveBeenCalledTimes(5)
+})
+
+it('returns a callback to update hourType', () => {
+  const [, updateHourType] = result.current
+  act(() => {
+    updateHourType(HourType.twelve)
+  })
+  expect(dispatch).toHaveBeenCalledWith(
+    actions.setHourType(HourType.twelve, getTimeEvent(HourType.twelve)),
+  )
+})
+`
