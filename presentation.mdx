@@ -2,16 +2,19 @@ import './script'
 import { Head, Appear, Image, withDeck } from 'mdx-deck'  // https://github.com/jxnblk/mdx-deck
 import { CodeSurfer } from 'mdx-deck-code-surfer' // https://elijahmanor.com/code-surfer/
 import {
+  ClassToggle,
   clockClassSnippets,
   ClockClass,
   CodeBlock,
   clock,
   context,
+  HookToggle,
   state,
   useTime,
 } from './components'
 
 export { monokai as theme } from './components'
+
 
 <Head>
   <title>Context</title>
@@ -150,7 +153,9 @@ export { monokai as theme } from './components'
 
 ---
 
-<ClockClass />
+<ClassToggle>
+  <ClockClass />
+</ClassToggle>
 
 <Appear>
   It works!
@@ -303,9 +308,11 @@ like making sure actions are dispatched<br /> when we expect them to be
 
 ---
 
-<context.TimeContextProvider>
-  <clock.Component />
-</context.TimeContextProvider>
+<HookToggle>
+  <context.TimeContextProvider>
+    <clock.Component />
+  </context.TimeContextProvider>
+</HookToggle>
 <Appear>
   it works!
 </Appear>

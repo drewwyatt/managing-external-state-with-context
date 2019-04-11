@@ -12,7 +12,7 @@ export const AmPm = {
   na: '',
 }
 
-const INTERVAL_KEY = 'DREWS_INTERVAL_KEY'
+const INTERVAL_KEY = 'HOOKS_INTERVAL_KEY'
 const setThatOneInterval = n => {
   if (window[INTERVAL_KEY]) {
     clearInterval(window[INTERVAL_KEY])

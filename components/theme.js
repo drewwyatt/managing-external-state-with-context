@@ -1,4 +1,5 @@
 import { dark } from 'mdx-deck/themes'
+import { ToggleProvider as Provider } from './toggle'
 
 export const monokai = {
   ...dark,
@@ -6,4 +7,5 @@ export const monokai = {
     ...dark.colors,
     background: '#272822',
   },
+  Provider,
 }

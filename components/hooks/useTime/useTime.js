@@ -1,5 +1,5 @@
 import { useCallback, useContext, useEffect } from 'react'
-import { Time, AmPm, HourType } from '../../time'
+import { Time, AmPm, HourType } from '../../hooks-time'
 import { TimeContext } from '../context'
 import { actions } from '../state'
 
@@ -15,7 +15,6 @@ const toCallback = (
 export const useTime = (
   context = TimeContext
 ) => {
-  console.log(context, useContext)
   const { state, dispatch } = useContext(context)
   let time
   useEffect(() => {
