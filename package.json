@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "codemirror": "^5.45.0",
-    "react-codemirror2": "^5.1.0"
+    "react-codemirror2": "^5.1.0",
+    "styled-components": "^4.2.0"
   }
 }

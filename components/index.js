@@ -1,6 +1,7 @@
 export * from './code-block'
 export * from './component-class'
 export * from './hooks'
+export * from './social-links'
 export * from './theme'
 export * from './time'
 export * from './toggle'
