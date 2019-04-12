@@ -30,9 +30,8 @@ export class ClockClass extends React.Component {
     [HourType.twelve, HourType.twentyFour].map(this.hourTypeToRadio.bind(this))
 
   hourTypeToRadio = hourType => (
-    <label>
+    <label key={hourType}>
       <input
-        key={hourType}
         type="radio"
         name="hour-type"
         value={hourType}

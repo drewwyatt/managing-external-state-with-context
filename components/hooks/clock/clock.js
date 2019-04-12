@@ -14,7 +14,7 @@ const View = ({ hours, minutes, seconds, amPm }) => {
 const Controls = ({ hourType, setter }) => (
   <>
     {[HourType.twelve, HourType.twentyFour].map(ht => (
-      <Control value={ht} current={hourType} setter={setter} />
+      <Control key={ht} value={ht} current={hourType} setter={setter} />
     ))}
   </>
 )
@@ -22,7 +22,6 @@ const Controls = ({ hourType, setter }) => (
 const Control = ({ value, current, setter }) => (
   <label>
     <input
-      key={value}
       type="radio"
       name="hour-type"
       value={value}
