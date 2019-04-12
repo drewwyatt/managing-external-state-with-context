@@ -1,6 +1,6 @@
 export const one = `
 import { useContext, useEffect } from 'react'
-import { Time } from '../../lib'
+import { Time } from 'our-fake-time-library'
 import { TimeContext } from './context'
 import { actions, State } from './state'
 
