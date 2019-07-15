@@ -1,3 +1,1 @@
-# Managing External State with React
-
-[link](https://managing-external-state-git-master.drewwyatt.now.sh/)
+# 🚛 This became [hooked-on-context](https://github.com/drewwyatt/hooked-on-context)
